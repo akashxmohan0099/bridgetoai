@@ -20,10 +20,10 @@ export default function Hero() {
         initial={{ opacity: 0, x: -120 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 1.2, delay: 0.3, ease: [0.25, 0.1, 0.25, 1] }}
-        className="absolute top-1/2 -translate-y-[40%] pointer-events-none hidden lg:block"
-        style={{ left: "5%", width: "28vw", maxWidth: "380px" }}
+        className="absolute left-0 top-1/2 -translate-y-1/2 pointer-events-none hidden lg:block"
+        style={{ width: "28vw", maxWidth: "380px" }}
       >
-        <Image src="/human-hand-v2.png" alt="Human hand reaching toward AI" width={987} height={1054} className="w-full h-auto -rotate-[15deg] origin-center" priority />
+        <Image src="/human-hand-v2.png" alt="Human hand reaching toward AI" width={987} height={1054} className="w-full h-auto" priority />
       </motion.div>
 
       {/* Robot hand — right side */}
@@ -31,10 +31,10 @@ export default function Hero() {
         initial={{ opacity: 0, x: 120 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 1.2, delay: 0.3, ease: [0.25, 0.1, 0.25, 1] }}
-        className="absolute top-1/2 -translate-y-[40%] pointer-events-none hidden lg:block"
-        style={{ right: "5%", width: "28vw", maxWidth: "380px" }}
+        className="absolute right-0 top-1/2 -translate-y-1/2 pointer-events-none hidden lg:block"
+        style={{ width: "28vw", maxWidth: "380px" }}
       >
-        <Image src="/robot-hand-v2.png" alt="Robot hand reaching toward human" width={934} height={1080} className="w-full h-auto rotate-[15deg] origin-center" priority />
+        <Image src="/robot-hand-v2.png" alt="Robot hand reaching toward human" width={934} height={1080} className="w-full h-auto" priority />
       </motion.div>
 
       {/* Content — centered */}
