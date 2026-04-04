@@ -11,6 +11,19 @@ export const metadata: Metadata = {
   title: "Bridge To AI — Making AI Work For Your Business",
   description:
     "We'll show you exactly where AI fits in your business — saving you time, money and resources. Book your FREE audit today.",
+  openGraph: {
+    title: "Bridge To AI — Making AI Work For Your Business",
+    description: "We find exactly where AI fits in your business, set it up, and train your team. Free audit, no obligation.",
+    url: "https://bridgetoai.com.au",
+    siteName: "Bridge To AI",
+    locale: "en_AU",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Bridge To AI — Making AI Work For Your Business",
+    description: "We find exactly where AI fits in your business, set it up, and train your team.",
+  },
 };
 
 export default function RootLayout({

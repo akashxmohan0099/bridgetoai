@@ -3,18 +3,13 @@
 import { motion } from "framer-motion";
 
 const industries = [
-  "Trades & Construction",
-  "Healthcare & Medical",
-  "Professional Services",
-  "Legal",
-  "Real Estate",
-  "Retail & Hospitality",
-  "Finance & Accounting",
+  "Trades & Construction", "Healthcare & Medical", "Professional Services",
+  "Legal", "Real Estate", "Retail & Hospitality", "Finance & Accounting",
 ];
 
 export default function WhoWeHelp() {
   return (
-    <section className="py-20 border-t border-border">
+    <section className="py-20 bg-primary-light">
       <div className="mx-auto max-w-[1200px] px-6 sm:px-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -29,7 +24,6 @@ export default function WhoWeHelp() {
             We help Australian businesses from 5 to 200 staff across these industries.
           </p>
         </motion.div>
-
         <motion.div
           initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -38,10 +32,7 @@ export default function WhoWeHelp() {
           className="flex flex-wrap gap-3"
         >
           {industries.map((industry, i) => (
-            <span
-              key={i}
-              className="rounded-full bg-surface border border-border px-5 py-2.5 text-[14px] text-text"
-            >
+            <span key={i} className="rounded-full bg-surface border border-primary/10 px-5 py-2.5 text-[14px] text-text font-medium">
               {industry}
             </span>
           ))}

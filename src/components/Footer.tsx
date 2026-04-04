@@ -16,24 +16,21 @@ export default function Footer() {
                 { label: "FAQ", href: "#faq" },
                 { label: "Contact", href: "#contact" },
               ].map((l) => (
-                <li key={l.href}>
-                  <a href={l.href} className="text-[14px] text-text-muted hover:text-text transition-colors">{l.label}</a>
-                </li>
+                <li key={l.href}><a href={l.href} className="text-[14px] text-text-muted hover:text-primary transition-colors">{l.label}</a></li>
               ))}
             </ul>
           </div>
           <div className="space-y-2 text-[14px] text-text-muted">
             <p>bridgetoai.com.au</p>
             <p>Australia-Wide</p>
-            <a href="mailto:hello@bridgetoai.com.au" className="hover:text-text transition-colors block">hello@bridgetoai.com.au</a>
+            <a href="mailto:hello@bridgetoai.com.au" className="hover:text-primary transition-colors block">hello@bridgetoai.com.au</a>
           </div>
         </div>
-
         <div className="mt-10 pt-6 border-t border-border flex flex-col sm:flex-row items-center justify-between gap-4 text-[13px] text-text-light">
           <span>&copy; 2026 Bridge To AI. All rights reserved.</span>
           <div className="flex items-center gap-4">
             <span>ABN XX XXX XXX XXX</span>
-            <a href="#" className="hover:text-text transition-colors">Privacy Policy</a>
+            <a href="#" className="hover:text-primary transition-colors">Privacy Policy</a>
           </div>
         </div>
       </div>

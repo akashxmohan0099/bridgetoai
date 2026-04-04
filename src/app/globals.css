@@ -1,14 +1,16 @@
 @import "tailwindcss";
 
 :root {
-  --bg: #f8f7f4;
+  --bg: #fafafa;
   --surface: #ffffff;
-  --card: #f1f0ec;
-  --text: #1a1a1a;
-  --text-muted: #71717a;
-  --text-light: #a1a1aa;
-  --border: #e4e4e0;
-  --accent: #c8e040;
+  --card: #f0f0f0;
+  --text: #111111;
+  --text-muted: #555555;
+  --text-light: #999999;
+  --border: #e5e5e5;
+  --primary: #0ea5e9;
+  --primary-light: #e0f2fe;
+  --primary-dark: #0284c7;
 }
 
 @theme inline {
@@ -19,10 +21,28 @@
   --color-text-muted: var(--text-muted);
   --color-text-light: var(--text-light);
   --color-border: var(--border);
-  --color-accent: var(--accent);
+  --color-primary: var(--primary);
+  --color-primary-light: var(--primary-light);
+  --color-primary-dark: var(--primary-dark);
   --font-sans: var(--font-jakarta);
 }
 
 html { scroll-behavior: smooth; }
 body { background: var(--bg); color: var(--text); }
 
+@keyframes orbit-cw {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+@keyframes orbit-ccw {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(-360deg); }
+}
+@keyframes counter-rotate-cw {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(-360deg); }
+}
+@keyframes counter-rotate-ccw {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
