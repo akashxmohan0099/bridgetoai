@@ -44,7 +44,7 @@ export default function ContactForm() {
               </div>
 
               {/* Contact details */}
-              <div className="mt-10 pt-8 border-t border-white/10 grid grid-cols-2 gap-4">
+              <div className="mt-10 pt-8 border-t border-white/10 grid grid-cols-1 sm:grid-cols-2 gap-4">
                 {[
                   { icon: Phone, label: "Call us", value: "1300 XXX XXX" },
                   { icon: EnvelopeSimple, label: "Email", value: "hello@bridgetoai.com.au" },

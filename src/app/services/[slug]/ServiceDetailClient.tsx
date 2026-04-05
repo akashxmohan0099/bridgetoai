@@ -223,7 +223,7 @@ export default function ServiceDetailClient({ service, index, prev, next }: Prop
           </div>
 
           {/* Mobile: stacked cards */}
-          <div className="lg:hidden grid sm:grid-cols-2 gap-4">
+          <div className="lg:hidden grid gap-4 sm:grid-cols-2">
             {service.features.map((feature, j) => (
               <motion.div
                 key={j}
@@ -243,7 +243,7 @@ export default function ServiceDetailClient({ service, index, prev, next }: Prop
       </section>
 
       {/* Real-world use cases — dark immersive section */}
-      <section className="relative py-28 bg-[#0b1a2e] overflow-hidden">
+      <section className="relative py-16 sm:py-28 bg-[#0b1a2e] overflow-hidden">
         {/* Background accents */}
         <div className="absolute inset-0 pointer-events-none">
           <div className="absolute top-0 left-[20%] w-[400px] h-[400px] rounded-full bg-[#0ea5e9]/10 blur-[100px]" />
@@ -335,17 +335,17 @@ export default function ServiceDetailClient({ service, index, prev, next }: Prop
       {/* How we deliver */}
       <section className="py-20">
         <div className="mx-auto max-w-[1200px] px-6 sm:px-10">
-          <div className="rounded-2xl bg-gradient-to-br from-[#0ea5e9] to-[#0284c7] p-10 sm:p-14">
+          <div className="rounded-2xl bg-gradient-to-br from-[#0ea5e9] to-[#0284c7] p-6 sm:p-10 lg:p-14">
             <h2 className="text-[clamp(1.6rem,3vw,2rem)] font-bold text-white mb-8">
               How we deliver {service.title.toLowerCase()}
             </h2>
-            <div className="grid sm:grid-cols-3 gap-6">
+            <div className="grid gap-6 sm:grid-cols-3">
               {[
                 { step: "1", title: "We find the right tools", desc: "We assess your specific needs and recommend the best solution — whether it\u2019s an existing product or something we build." },
                 { step: "2", title: "We set it all up", desc: "Full configuration, system connections, data migration, and testing. We work alongside your team with zero disruption." },
                 { step: "3", title: "We train your team", desc: "Hands-on, role-specific training until every person is confident. Plain English, no jargon, no one left behind." },
               ].map((s, i) => (
-                <div key={i} className="text-center">
+                <div key={i} className="text-center sm:text-center">
                   <span className="inline-flex h-12 w-12 items-center justify-center rounded-full bg-white/15 text-[16px] font-bold text-white mb-4">
                     {s.step}
                   </span>

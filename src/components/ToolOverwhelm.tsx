@@ -71,11 +71,11 @@ export default function ToolOverwhelm() {
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true, margin: "-50px" }}
             transition={{ duration: 0.8 }}
-            className="relative flex items-center justify-center h-[480px]"
+            className="relative flex items-center justify-center h-[320px] sm:h-[480px]"
           >
             {/* Orbit tracks */}
-            <div className="absolute h-[260px] w-[260px] rounded-full border border-primary/10" />
-            <div className="absolute h-[420px] w-[420px] rounded-full border border-primary/5" />
+            <div className="absolute h-[180px] w-[180px] sm:h-[260px] sm:w-[260px] rounded-full border border-primary/10" />
+            <div className="absolute h-[290px] w-[290px] sm:h-[420px] sm:w-[420px] rounded-full border border-primary/5 hidden sm:block" />
 
             {/* Center — character illustration */}
             <div className="relative z-10">
@@ -84,26 +84,36 @@ export default function ToolOverwhelm() {
                 alt="Business owner overwhelmed by AI tools"
                 width={160}
                 height={160}
-                className="w-40 h-40 object-contain"
+                className="w-28 h-28 sm:w-40 sm:h-40 object-contain"
                 priority
               />
             </div>
 
             {/* Inner ring — clockwise */}
-            <div className="absolute h-[260px] w-[260px]" style={{ animation: "orbit-cw 16s linear infinite" }}>
+            <div className="absolute h-[180px] w-[180px] sm:h-[260px] sm:w-[260px]" style={{ animation: "orbit-cw 16s linear infinite" }}>
               {innerLogos.map((logo, i) => (
-                <div key={i} className="absolute" style={{ left: "50%", top: "50%", transform: `rotate(${i * 60}deg) translateX(130px)`, marginLeft: -20, marginTop: -20 }}>
-                  <div className="group/chip" style={{ animation: "counter-rotate-cw 16s linear infinite" }}>
-                    <div className="w-[40px] h-[40px] rounded-xl overflow-hidden shadow-md transition-transform duration-500 group-hover/chip:scale-150">
-                      {/* eslint-disable-next-line @next/next/no-img-element */}
-                      <img src={`/logos/${logo.file}`} alt={logo.name} width={40} height={40} loading="lazy" className="w-full h-full" />
+                <div key={i} className="absolute" style={{ left: "50%", top: "50%" }}>
+                  <div className="hidden sm:block absolute" style={{ transform: `rotate(${i * 60}deg) translateX(130px)`, marginLeft: -20, marginTop: -20 }}>
+                    <div className="group/chip" style={{ animation: "counter-rotate-cw 16s linear infinite" }}>
+                      <div className="w-[40px] h-[40px] rounded-xl overflow-hidden shadow-md transition-transform duration-500 group-hover/chip:scale-150">
+                        {/* eslint-disable-next-line @next/next/no-img-element */}
+                        <img src={`/logos/${logo.file}`} alt={logo.name} width={40} height={40} loading="lazy" className="w-full h-full" />
+                      </div>
+                    </div>
+                  </div>
+                  <div className="sm:hidden absolute" style={{ transform: `rotate(${i * 60}deg) translateX(90px)`, marginLeft: -16, marginTop: -16 }}>
+                    <div className="group/chip" style={{ animation: "counter-rotate-cw 16s linear infinite" }}>
+                      <div className="w-[32px] h-[32px] rounded-lg overflow-hidden shadow-md">
+                        {/* eslint-disable-next-line @next/next/no-img-element */}
+                        <img src={`/logos/${logo.file}`} alt={logo.name} width={32} height={32} loading="lazy" className="w-full h-full" />
+                      </div>
                     </div>
                   </div>
                 </div>
               ))}
             </div>
 
-            {/* Outer ring — counter-clockwise */}
+            {/* Outer ring — counter-clockwise (hidden on mobile) */}
             <div className="absolute h-[420px] w-[420px] hidden sm:block" style={{ animation: "orbit-ccw 22s linear infinite" }}>
               {outerLogos.map((logo, i) => (
                 <div key={i} className="absolute" style={{ left: "50%", top: "50%", transform: `rotate(${i * 36}deg) translateX(210px)`, marginLeft: -17, marginTop: -17 }}>

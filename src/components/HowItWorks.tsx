@@ -35,7 +35,7 @@ export default function HowItWorks() {
                 className="text-center relative"
               >
                 {/* Step circle */}
-                <div className="relative z-10 mx-auto flex h-24 w-24 flex-col items-center justify-center rounded-full bg-white/10 border border-white/15 backdrop-blur-sm mb-6">
+                <div className="relative z-10 mx-auto flex h-18 w-18 sm:h-24 sm:w-24 flex-col items-center justify-center rounded-full bg-white/10 border border-white/15 backdrop-blur-sm mb-6">
                   <step.icon size={28} weight="duotone" className="text-white" />
                   <span className="text-[11px] font-bold text-white/50 mt-1">{step.time}</span>
                 </div>

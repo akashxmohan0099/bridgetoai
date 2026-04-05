@@ -39,7 +39,7 @@ export default function Hero() {
 
       {/* Content — centered */}
       <div className="flex-1 flex flex-col justify-between mx-auto w-full max-w-[700px] px-6 sm:px-10 relative z-10">
-        <div className="pt-32 sm:pt-40 text-center">
+        <div className="pt-24 sm:pt-32 lg:pt-40 text-center">
           <motion.div
             initial={{ opacity: 0, y: -8 }}
             animate={{ opacity: 1, y: 0 }}
