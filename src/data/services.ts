@@ -1,4 +1,3 @@
-import type { Icon } from "@phosphor-icons/react";
 
 export interface Feature {
   name: string;

@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40" fill="none">
+  <!-- QuickBooks - green circle with interlocking arrows/tabs -->
+  <circle cx="20" cy="20" r="16" fill="#2CA01C"/>
+  <!-- Left tab - white -->
+  <path d="M12 13V27" stroke="white" stroke-width="3" stroke-linecap="round"/>
+  <path d="M12 13H19C21.76 13 24 15.24 24 18C24 20.76 21.76 23 19 23H12" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  <!-- Right tab - white, inverted -->
+  <path d="M28 27V13" stroke="white" stroke-width="3" stroke-linecap="round"/>
+  <path d="M28 27H21C18.24 27 16 24.76 16 22C16 19.24 18.24 17 21 17H28" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+</svg>

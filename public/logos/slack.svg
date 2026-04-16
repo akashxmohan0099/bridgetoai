@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40" fill="none">
+  <!-- Slack logo - 4 colored arms with dots -->
+  <!-- Top-left: red/pink -->
+  <rect x="11" y="4" width="5" height="13" rx="2.5" fill="#E01E5A"/>
+  <rect x="4" y="12" width="12" height="5" rx="2.5" fill="#E01E5A"/>
+  <circle cx="6.5" cy="6.5" r="2.5" fill="#E01E5A"/>
+  <!-- Top-right: cyan -->
+  <rect x="24" y="4" width="5" height="13" rx="2.5" fill="#36C5F0"/>
+  <rect x="24" y="12" width="12" height="5" rx="2.5" fill="#36C5F0"/>
+  <circle cx="33.5" cy="6.5" r="2.5" fill="#36C5F0"/>
+  <!-- Bottom-left: green -->
+  <rect x="11" y="23" width="5" height="13" rx="2.5" fill="#2EB67D"/>
+  <rect x="4" y="23" width="12" height="5" rx="2.5" fill="#2EB67D"/>
+  <circle cx="6.5" cy="33.5" r="2.5" fill="#2EB67D"/>
+  <!-- Bottom-right: yellow -->
+  <rect x="24" y="23" width="5" height="13" rx="2.5" fill="#ECB22E"/>
+  <rect x="24" y="23" width="12" height="5" rx="2.5" fill="#ECB22E"/>
+  <circle cx="33.5" cy="33.5" r="2.5" fill="#ECB22E"/>
+</svg>

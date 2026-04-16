@@ -1,35 +1,35 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { GraduationCap, Wrench, Crown, ArrowRight } from "@phosphor-icons/react";
+import { GraduationCap, Wrench, Crown, CheckCircle } from "@phosphor-icons/react";
 
 const offerings = [
   {
     icon: Wrench,
+    number: "01",
     title: "AI Setup & Integration",
-    tagline: "Up and running in 1–2 weeks",
+    tagline: "We pick the right tools, plug them into your systems, and get you live — fast.",
     highlights: ["Tool selection & vetting", "Full system integration", "Data migration & testing"],
-    gradient: "from-[#0ea5e9] to-[#0284c7]",
   },
   {
     icon: Crown,
+    number: "02",
     title: "Custom AI Build",
-    tagline: "One platform, built around you",
+    tagline: "When off-the-shelf won't cut it, we build a platform shaped around your business.",
     highlights: ["Built to your workflows", "Centralised dashboard", "Ongoing support & updates"],
-    gradient: "from-[#0ea5e9] to-[#0284c7]",
   },
   {
     icon: GraduationCap,
+    number: "03",
     title: "AI Training",
-    tagline: "Confidence across the whole team",
+    tagline: "Your whole team — from admin to leadership — confident with AI in days, not months.",
     highlights: ["Tailored to each role", "Hands-on, practical sessions", "Plain English, no jargon"],
-    gradient: "from-[#0ea5e9] to-[#0284c7]",
   },
 ];
 
 export default function Offerings() {
   return (
-    <section id="offerings" className="py-28">
+    <section id="offerings" className="py-20">
       <div className="mx-auto max-w-[1200px] px-6 sm:px-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -37,11 +37,17 @@ export default function Offerings() {
           viewport={{ once: true, margin: "-50px" }}
           className="text-center max-w-xl mx-auto mb-14"
         >
+          <div className="flex justify-center mb-4">
+            <span className="inline-flex items-center gap-3 text-[12px] font-semibold tracking-[0.15em] uppercase text-primary/60">
+              <span className="h-[2px] w-5 bg-accent rounded-full" />
+              What we do
+            </span>
+          </div>
           <h2 className="text-[clamp(1.8rem,3.5vw,2.6rem)] font-bold leading-[1.15] tracking-[-0.02em] text-text">
             Three ways we help your business
           </h2>
           <p className="mt-3 text-[15px] text-text-muted leading-relaxed">
-            Whether you need a quick start, a full integration, or a ground-up build.
+            Whether you need a quick start, a full integration, or a ground-up build — we work with trades, healthcare, legal, real estate, retail, and professional services across Australia.
           </p>
         </motion.div>
 
@@ -51,30 +57,50 @@ export default function Offerings() {
               key={i}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-50px" }}
-              transition={{ delay: i * 0.08, duration: 0.4 }}
-              whileHover={{ y: -4 }}
-              className={`group rounded-2xl bg-gradient-to-br ${o.gradient} p-7 sm:p-8 transition-all duration-300 hover:shadow-xl flex flex-col`}
+              viewport={{ once: true, amount: 0.2 }}
+              transition={{ delay: i * 0.1, duration: 0.5 }}
+              whileHover={{ y: -4, transition: { duration: 0.2 } }}
+              className="group relative rounded-2xl border border-border bg-bg p-7 sm:p-8 transition-shadow duration-300 hover:shadow-xl hover:border-primary/15 flex flex-col overflow-hidden"
             >
-              <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-white/15">
-                <o.icon size={24} weight="duotone" className="text-white" />
+              {/* Brand accent */}
+              <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-primary/20 via-accent/20 to-primary/20" />
+              {/* Large watermark number */}
+              <span className="absolute -top-4 -right-2 text-[120px] font-black leading-none select-none pointer-events-none text-primary opacity-[0.04]">
+                {o.number}
+              </span>
+
+              {/* Icon + number row */}
+              <div className="flex items-center gap-4 relative z-10">
+                <motion.div
+                  whileHover={{ rotate: [0, -8, 8, 0] }}
+                  transition={{ duration: 0.5 }}
+                  className="flex h-12 w-12 items-center justify-center rounded-xl bg-primary-light"
+                >
+                  <o.icon size={24} weight="duotone" className="text-primary" />
+                </motion.div>
+                <span className="text-[13px] font-bold tracking-wider text-primary">
+                  {o.number}
+                </span>
               </div>
 
-              <h3 className="mt-5 text-[18px] font-bold text-white leading-snug">{o.title}</h3>
-              <p className="mt-1 text-[14px] text-white/60">{o.tagline}</p>
+              <h3 className="mt-5 text-[19px] font-bold text-text leading-snug relative z-10">{o.title}</h3>
+              <p className="mt-2 text-[14px] text-text-muted leading-relaxed relative z-10">{o.tagline}</p>
 
-              <ul className="mt-5 space-y-2.5">
+              <div className="mt-5 pt-5 border-t border-border space-y-3 relative z-10">
                 {o.highlights.map((h, j) => (
-                  <li key={j} className="flex items-center gap-2.5 text-[14px] text-white/75">
-                    <span className="h-1.5 w-1.5 rounded-full bg-white/40 shrink-0" />
-                    {h}
-                  </li>
+                  <motion.div
+                    key={j}
+                    initial={{ opacity: 0, x: -10 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: 0.3 + j * 0.08 }}
+                    className="flex items-center gap-2.5"
+                  >
+                    <CheckCircle size={16} weight="fill" className="text-primary shrink-0" />
+                    <span className="text-[13px] font-medium text-text">{h}</span>
+                  </motion.div>
                 ))}
-              </ul>
-
-              <a href="#contact" className="mt-auto pt-6 inline-flex items-center gap-1.5 text-[13px] font-semibold text-white/80 hover:text-white transition-colors">
-                Get started <ArrowRight size={14} weight="bold" />
-              </a>
+              </div>
             </motion.div>
           ))}
         </div>

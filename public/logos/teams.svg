@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40" fill="none">
+  <!-- Microsoft Teams - purple with T and people -->
+  <circle cx="28" cy="12" r="5" fill="#7B83EB"/>
+  <rect x="4" y="10" width="22" height="22" rx="3" fill="#6264A7"/>
+  <path d="M11 16H21V18.5H17.5V28H14.5V18.5H11V16Z" fill="white"/>
+  <path d="M30 18C32.76 18 35 20.24 35 23V28H27V23C27 20.24 29.24 18 30 18Z" fill="#7B83EB" opacity="0.8"/>
+</svg>

@@ -17,6 +17,17 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   return {
     title: `${service.title} — Bridge To AI`,
     description: service.description,
+    openGraph: {
+      title: `${service.title} — Bridge To AI`,
+      description: service.description,
+      url: `https://bridgetoai.com.au/services/${slug}`,
+      siteName: "Bridge To AI",
+      locale: "en_AU",
+      type: "website",
+    },
+    alternates: {
+      canonical: `https://bridgetoai.com.au/services/${slug}`,
+    },
   };
 }
 

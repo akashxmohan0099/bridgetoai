@@ -27,7 +27,7 @@ const outerLogos = [
 
 export default function ToolOverwhelm() {
   return (
-    <section className="py-28 bg-surface overflow-hidden">
+    <section className="py-20 overflow-hidden">
       <div className="mx-auto max-w-[1200px] px-6 sm:px-10">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* Text side */}
@@ -36,16 +36,16 @@ export default function ToolOverwhelm() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-50px" }}
           >
-            <div className="flex items-center gap-3 mb-6">
-              <div className="h-px w-10 bg-gradient-to-r from-primary to-transparent" />
-              <span className="text-[12px] font-semibold tracking-[0.15em] uppercase text-primary/60">
+            <div className="mb-6">
+              <span className="inline-flex items-center gap-3 text-[12px] font-semibold tracking-[0.15em] uppercase text-primary/60">
+                <span className="h-[2px] w-5 bg-accent rounded-full" />
                 The problem
               </span>
             </div>
 
             <h2 className="text-[clamp(1.8rem,3.5vw,2.6rem)] font-bold leading-[1.12] tracking-[-0.02em] text-text">
               Hundreds of AI tools.{" "}
-              <span className="bg-gradient-to-r from-[#0ea5e9] to-[#38bdf8] bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-primary to-primary-dark bg-clip-text text-transparent">
                 Zero clarity
               </span>{" "}
               on which ones matter.
@@ -59,7 +59,7 @@ export default function ToolOverwhelm() {
 
             <a
               href="#offerings"
-              className="mt-8 inline-block rounded-lg bg-primary px-6 py-3 text-[15px] font-semibold text-white hover:bg-primary-dark transition-colors"
+              className="mt-8 inline-block rounded-xl bg-primary px-6 py-3 text-[15px] font-semibold text-white hover:bg-primary-dark transition-colors"
             >
               See how we help
             </a>
@@ -80,7 +80,7 @@ export default function ToolOverwhelm() {
             {/* Center — character illustration */}
             <div className="relative z-10">
               <Image
-                src="/confused-person.png"
+                src="/confused-person.webp"
                 alt="Business owner overwhelmed by AI tools"
                 width={160}
                 height={160}

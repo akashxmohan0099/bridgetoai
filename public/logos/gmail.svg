@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40" fill="none">
+  <!-- Gmail M-envelope -->
+  <path d="M4 11C4 9.34 5.34 8 7 8H33C34.66 8 36 9.34 36 11V29C36 30.66 34.66 32 33 32H7C5.34 32 4 30.66 4 29V11Z" fill="#F1F3F4"/>
+  <path d="M4 11L20 22L36 11" stroke="#EA4335" stroke-width="0" fill="none"/>
+  <path d="M36 10L20 22L4 10V29C4 30.66 5.34 32 7 32H33C34.66 32 36 30.66 36 29V10Z" fill="#F1F3F4"/>
+  <path d="M4 10L20 22L36 10" fill="none"/>
+  <!-- Colored corners -->
+  <path d="M4 10V12L20 24L36 12V10C36 8.9 35.1 8 34 8H33L20 19L7 8H6C4.9 8 4 8.9 4 10Z" fill="#EA4335"/>
+  <path d="M4 10V29C4 30.66 5.34 32 7 32H8V14L20 24L4 12" fill="#34A853"/>
+  <path d="M36 10V29C36 30.66 34.66 32 33 32H32V14L20 24L36 12" fill="#4285F4"/>
+  <path d="M32 14V32H33C34.66 32 36 30.66 36 29V12L32 14Z" fill="#4285F4"/>
+  <path d="M8 14V32H7C5.34 32 4 30.66 4 29V12L8 14Z" fill="#34A853"/>
+  <path d="M4 10C4 8.9 4.9 8 6 8H7L20 19L33 8H34C35.1 8 36 8.9 36 10V12L20 24L4 12V10Z" fill="#EA4335"/>
+  <path d="M36 10V12L32 14V8H34C35.1 8 36 8.9 36 10Z" fill="#C5221F"/>
+  <path d="M4 10V12L8 14V8H6C4.9 8 4 8.9 4 10Z" fill="#188038"/>
+  <!-- Yellow bottom left -->
+  <rect x="4" y="26" width="4" height="6" rx="0" fill="#FBBC04"/>
+  <path d="M4 29V32H7C5.34 32 4 30.66 4 29Z" fill="#FBBC04"/>
+</svg>

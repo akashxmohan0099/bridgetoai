@@ -8,9 +8,12 @@
   --text-muted: #555555;
   --text-light: #999999;
   --border: #e5e5e5;
-  --primary: #0ea5e9;
-  --primary-light: #e0f2fe;
-  --primary-dark: #0284c7;
+  --primary: #4F46E5;
+  --primary-light: #EEF2FF;
+  --primary-dark: #4338CA;
+  --accent: #f97316;
+  --accent-dark: #ea580c;
+  --accent-light: #fff7ed;
 }
 
 @theme inline {
@@ -24,11 +27,20 @@
   --color-primary: var(--primary);
   --color-primary-light: var(--primary-light);
   --color-primary-dark: var(--primary-dark);
+  --color-accent: var(--accent);
+  --color-accent-dark: var(--accent-dark);
+  --color-accent-light: var(--accent-light);
   --font-sans: var(--font-jakarta);
 }
 
-html { scroll-behavior: smooth; }
 body { background: var(--bg); color: var(--text); }
+
+/* Focus styles for keyboard navigation */
+*:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
 
 @keyframes orbit-cw {
   from { transform: rotate(0deg); }
@@ -38,11 +50,20 @@ body { background: var(--bg); color: var(--text); }
   from { transform: rotate(0deg); }
   to { transform: rotate(-360deg); }
 }
-@keyframes counter-rotate-cw {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(-360deg); }
+@keyframes counter-rotate-cw { from { transform: rotate(0deg); } to { transform: rotate(-360deg); } }
+@keyframes counter-rotate-ccw { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
 }
-@keyframes counter-rotate-ccw {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+
+@keyframes pulse-soft {
+  0%, 100% { opacity: 0.6; }
+  50% { opacity: 1; }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% center; }
+  100% { background-position: 200% center; }
 }
