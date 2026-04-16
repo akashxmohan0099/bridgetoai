@@ -1,7 +1,3 @@
-"use client";
-
-import { LinkedinLogo, InstagramLogo } from "@phosphor-icons/react";
-
 export default function Footer() {
   return (
     <footer className="py-12 border-t border-border">
@@ -13,14 +9,6 @@ export default function Footer() {
               Bridge To AI
             </span>
             <p className="mt-2 text-[14px] text-text-muted leading-relaxed">Making AI work for your business.</p>
-            <div className="mt-4 flex items-center gap-3">
-              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="flex h-9 w-9 items-center justify-center rounded-xl bg-card text-text-muted hover:text-primary hover:bg-primary-light transition-colors">
-                <LinkedinLogo size={18} weight="bold" />
-              </a>
-              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="flex h-9 w-9 items-center justify-center rounded-xl bg-card text-text-muted hover:text-primary hover:bg-primary-light transition-colors">
-                <InstagramLogo size={18} weight="bold" />
-              </a>
-            </div>
           </div>
           <div>
             <ul className="space-y-2">
@@ -39,7 +27,6 @@ export default function Footer() {
             <p>bridgetoai.com.au</p>
             <p>Australia-Wide</p>
             <a href="mailto:hello@bridgetoai.com.au" className="hover:text-primary transition-colors block">hello@bridgetoai.com.au</a>
-            <p className="mt-3 text-[13px] text-text-light">ABN: XX XXX XXX XXX</p>
           </div>
         </div>
         <div className="mt-10 pt-6 border-t border-primary/[0.12] flex flex-col sm:flex-row items-center justify-between gap-4 text-[13px] text-text-light">

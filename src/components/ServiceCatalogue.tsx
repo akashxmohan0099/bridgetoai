@@ -3,8 +3,9 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
 import {
-  Envelope, Phone, BookOpen, Microphone, TreeStructure, ChartLineUp, ArrowRight,
+  PaperPlaneTilt, ChatTeardropDots, Brain, VideoCamera, PlugsConnected, ChartPieSlice, ArrowRight,
 } from "@phosphor-icons/react";
+import type { Icon as PhosphorIcon } from "@phosphor-icons/react";
 import { serviceAreas } from "@/data/services";
 
 // Only shorten feature names that are too long for the 2-col grid
@@ -25,13 +26,13 @@ const shortNames: Record<string, string> = {
   "Client Follow-Up & Retention": "Follow-Up & Retention",
 };
 
-const cards = [
-  { icon: Envelope, logos: ["gmail.svg", "outlook.svg", "google-docs.svg", "grammarly.svg"] },
-  { icon: Phone, logos: ["whatsapp.svg", "calendly.svg", "chatgpt.svg", "intercom.svg"] },
-  { icon: BookOpen, logos: ["chatgpt.svg", "claude.svg", "gemini.svg", "notion.svg"] },
-  { icon: Microphone, logos: ["zoom.svg", "teams.svg", "google-meet.svg", "google-docs.svg"] },
-  { icon: TreeStructure, logos: ["zapier.svg", "hubspot.svg", "slack.svg", "notion.svg"] },
-  { icon: ChartLineUp, logos: ["xero.svg", "quickbooks.svg", "google-sheets.svg", "power-bi.svg"] },
+const cards: { icon: PhosphorIcon; logos: string[] }[] = [
+  { icon: PaperPlaneTilt, logos: ["gmail.svg", "outlook.svg", "google-docs.svg", "grammarly.svg"] },
+  { icon: ChatTeardropDots, logos: ["whatsapp.svg", "calendly.svg", "chatgpt.svg", "intercom.svg"] },
+  { icon: Brain, logos: ["chatgpt.svg", "claude.svg", "gemini.svg", "notion.svg"] },
+  { icon: VideoCamera, logos: ["zoom.svg", "teams.svg", "google-meet.svg", "google-docs.svg"] },
+  { icon: PlugsConnected, logos: ["zapier.svg", "hubspot.svg", "slack.svg", "notion.svg"] },
+  { icon: ChartPieSlice, logos: ["xero.svg", "quickbooks.svg", "google-sheets.svg", "power-bi.svg"] },
 ];
 
 export default function ServiceCatalogue() {
@@ -60,8 +61,7 @@ export default function ServiceCatalogue() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
           {serviceAreas.map((area, i) => {
-            const card = cards[i];
-            const Icon = card.icon;
+            const { icon: Icon, logos } = cards[i];
 
             return (
               <motion.div
@@ -75,33 +75,44 @@ export default function ServiceCatalogue() {
                   href={`/services/${area.slug}`}
                   className="group block rounded-2xl border border-border bg-bg overflow-hidden transition-all duration-300 hover:shadow-xl hover:border-primary/15 hover:-translate-y-1 h-full"
                 >
-                  {/* Visual header — indigo gradient */}
-                  <div className="relative bg-gradient-to-br from-[#4F46E5] via-[#6366F1] to-[#818CF8] px-7 py-8 overflow-hidden">
-                    <div className="relative z-10 flex items-center justify-between">
-                      <motion.div
-                        whileHover={{ rotate: [0, -6, 6, 0] }}
-                        transition={{ duration: 0.4 }}
-                        className="flex h-[72px] w-[72px] items-center justify-center rounded-2xl bg-white/15 backdrop-blur-sm shadow-lg shadow-black/10"
-                      >
-                        <Icon size={36} weight="duotone" className="text-white" />
-                      </motion.div>
+                  {/* Visual header */}
+                  <div className="relative bg-gradient-to-br from-[#4F46E5] via-[#6366F1] to-[#818CF8] px-7 py-10 overflow-hidden">
+                    {/* Glow */}
+                    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-52 h-32 bg-white/[0.06] rounded-full blur-3xl pointer-events-none" />
 
-                      <div className="flex items-center gap-2">
-                        {card.logos.map((logo) => (
-                          <div
+                    <div className="relative z-10 flex items-center justify-between">
+                      {/* Category icon */}
+                      <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-white/[0.1] border border-white/[0.12] shrink-0 backdrop-blur-sm">
+                        <Icon size={28} weight="fill" className="text-white/70" />
+                      </div>
+
+                      {/* Brand logos */}
+                      <div className="flex items-center gap-3">
+                        {logos.map((logo, li) => (
+                          <motion.div
                             key={logo}
-                            className="flex h-10 w-10 items-center justify-center rounded-xl bg-white/90 shadow-sm transition-transform duration-300 group-hover:scale-105"
+                            initial={{ opacity: 0, scale: 0.7, y: 10 }}
+                            whileInView={{ opacity: 1, scale: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{
+                              type: "spring",
+                              stiffness: 260,
+                              damping: 20,
+                              delay: (i % 2) * 0.08 + li * 0.07 + 0.15,
+                            }}
+                            whileHover={{ y: -5, scale: 1.08 }}
+                            className="flex h-[52px] w-[52px] items-center justify-center rounded-2xl bg-white shadow-lg shadow-black/10 transition-shadow duration-300 group-hover:shadow-xl"
                           >
                             {/* eslint-disable-next-line @next/next/no-img-element */}
                             <img
                               src={`/logos/${logo}`}
-                              alt={logo.replace('.svg', '')}
-                              width={22}
-                              height={22}
-                              className="w-[22px] h-[22px]"
+                              alt={logo.replace(".svg", "")}
+                              width={28}
+                              height={28}
+                              className="w-[28px] h-[28px]"
                               loading="lazy"
                             />
-                          </div>
+                          </motion.div>
                         ))}
                       </div>
                     </div>

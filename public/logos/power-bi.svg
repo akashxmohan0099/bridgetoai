@@ -1,10 +1,1 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40" fill="none">
-  <!-- Power BI - yellow/amber bar chart -->
-  <rect x="8" y="4" width="24" height="32" rx="3" fill="#F2C811"/>
-  <!-- Three ascending bars -->
-  <rect x="12" y="22" width="5" height="10" rx="1" fill="white"/>
-  <rect x="19" y="16" width="5" height="16" rx="1" fill="white" opacity="0.9"/>
-  <rect x="26" y="10" width="5" height="22" rx="1" fill="white" opacity="0.8"/>
-  <!-- Bottom line -->
-  <line x1="11" y1="33" x2="32" y2="33" stroke="white" stroke-width="1" opacity="0.5"/>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 342"><defs><linearGradient id="pbi1" x1="42.593%" x2="57.245%" y1="0%" y2="93.174%"><stop offset="0%" stop-color="#e6ad10"/><stop offset="100%" stop-color="#c87e0e"/></linearGradient><linearGradient id="pbi2" x1="40.122%" x2="62.028%" y1="0%" y2="95.592%"><stop offset="0%" stop-color="#f6d751"/><stop offset="100%" stop-color="#e6ad10"/></linearGradient><linearGradient id="pbi3" x1="27.774%" x2="55.012%" y1="0%" y2="96.828%"><stop offset="0%" stop-color="#f9e589"/><stop offset="100%" stop-color="#f6d751"/></linearGradient></defs><path fill="url(#pbi1)" d="M142.222 0c-7.854 0-14.222 6.368-14.222 14.222v312.889c0 7.854 6.368 14.222 14.222 14.222h99.556c7.854 0 14.222-6.368 14.222-14.222V14.222C256 6.368 249.632 0 241.778 0H142.222z"/><path fill="url(#pbi2)" d="M71.111 85.333c-7.854 0-14.222 6.368-14.222 14.223v228.555c0 7.855 6.368 14.222 14.222 14.222h113.778V85.333H71.111z" opacity=".9"/><path fill="url(#pbi3)" d="M0 170.667c0-7.855 6.368-14.223 14.222-14.223h99.556c7.854 0 14.222 6.368 14.222 14.223v156.444c0 7.855-6.368 14.222-14.222 14.222H14.222C6.368 341.333 0 334.966 0 327.111V170.667z"/></svg>
