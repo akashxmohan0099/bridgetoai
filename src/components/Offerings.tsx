@@ -29,8 +29,8 @@ const offerings = [
 
 export default function Offerings() {
   return (
-    <section id="offerings" className="py-20">
-      <div className="mx-auto max-w-[1200px] px-6 sm:px-10">
+    <section id="offerings" className="py-16 sm:py-20">
+      <div className="mx-auto max-w-[1200px] px-5 sm:px-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -60,7 +60,7 @@ export default function Offerings() {
               viewport={{ once: true, amount: 0.2 }}
               transition={{ delay: i * 0.1, duration: 0.5 }}
               whileHover={{ y: -4, transition: { duration: 0.2 } }}
-              className="group relative rounded-2xl border border-border bg-bg p-7 sm:p-8 transition-shadow duration-300 hover:shadow-xl hover:border-primary/15 flex flex-col overflow-hidden"
+              className="group relative rounded-2xl border border-border bg-bg p-6 sm:p-8 transition-shadow duration-300 hover:shadow-xl hover:border-primary/15 flex flex-col overflow-hidden"
             >
               {/* Brand accent */}
               <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-primary/20 via-accent/20 to-primary/20" />

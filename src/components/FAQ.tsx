@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import Link from "next/link";
 import { Plus, Minus } from "@phosphor-icons/react";
 
 const faqs = [
@@ -16,9 +17,9 @@ const faqs = [
 export default function FAQ() {
   const [open, setOpen] = useState<number | null>(null);
   return (
-    <section id="faq" className="pt-20 pb-10">
-      <div className="mx-auto max-w-[1200px] px-6 sm:px-10">
-        <div className="relative rounded-2xl border border-border bg-bg p-8 sm:p-12 lg:p-14 overflow-hidden">
+    <section id="faq" className="pt-16 sm:pt-20 pb-10">
+      <div className="mx-auto max-w-[1200px] px-5 sm:px-10">
+        <div className="relative rounded-2xl border border-border bg-bg p-6 sm:p-12 lg:p-14 overflow-hidden">
           <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-primary/20 via-accent/20 to-primary/20" />
           <div className="grid lg:grid-cols-[1fr_1.4fr] gap-10 lg:gap-16">
             {/* Left — heading */}
@@ -35,12 +36,12 @@ export default function FAQ() {
               <p className="mt-3 text-[15px] text-text-muted leading-relaxed">
                 Everything you need to know before getting started. Can&apos;t find what you&apos;re looking for?
               </p>
-              <a
+              <Link
                 href="/#contact"
                 className="mt-6 inline-flex items-center gap-2 rounded-xl bg-primary-light px-5 py-2.5 text-[14px] font-semibold text-primary hover:bg-primary/10 transition-colors"
               >
                 Get in touch
-              </a>
+              </Link>
             </motion.div>
 
             {/* Right — accordion */}
@@ -56,7 +57,7 @@ export default function FAQ() {
                       <span className="text-[13px] font-bold text-primary mt-0.5 shrink-0">
                         {String(i + 1).padStart(2, "0")}
                       </span>
-                      <span className="text-[16px] font-semibold text-text group-hover:text-primary transition-colors">{faq.q}</span>
+                      <span className="text-[15px] sm:text-[16px] font-semibold text-text group-hover:text-primary transition-colors">{faq.q}</span>
                     </span>
                     <span className="shrink-0 flex h-7 w-7 items-center justify-center rounded-full bg-primary-light text-primary transition-transform duration-200" style={{ transform: open === i ? "rotate(180deg)" : "none" }}>
                       {open === i ? <Minus size={14} weight="bold" /> : <Plus size={14} weight="bold" />}

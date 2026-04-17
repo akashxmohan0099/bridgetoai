@@ -42,8 +42,8 @@ export default function Hero() {
       </motion.div>
 
       {/* Content — centered */}
-      <div className="flex-1 flex flex-col justify-between mx-auto w-full max-w-[700px] px-6 sm:px-10 relative z-10">
-        <div className="pt-24 sm:pt-32 lg:pt-40 text-center">
+      <div className="flex-1 flex flex-col justify-between mx-auto w-full max-w-[700px] px-5 sm:px-10 relative z-10">
+        <div className="pt-20 sm:pt-32 lg:pt-40 text-center">
           <motion.div
             initial={{ opacity: 0, y: -8 }}
             animate={{ opacity: 1, y: 0 }}
@@ -60,7 +60,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.1 }}
-            className="text-[clamp(2.4rem,5.5vw,3.8rem)] font-bold leading-[1.08] tracking-[-0.035em] text-white"
+            className="text-[clamp(2rem,6.5vw,3.8rem)] font-bold leading-[1.08] tracking-[-0.035em] text-white"
           >
             We&apos;ll show you exactly where AI fits in your business.
           </motion.h1>
@@ -78,12 +78,12 @@ export default function Hero() {
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.4 }}
-            className="mt-9 flex flex-wrap justify-center gap-3"
+            className="mt-9 flex flex-col sm:flex-row flex-wrap justify-center gap-3"
           >
-            <a href="#contact" className="rounded-xl bg-accent px-6 py-3.5 text-[15px] font-semibold text-white hover:bg-accent-dark transition-colors shadow-lg shadow-accent/25">
+            <a href="#contact" className="rounded-xl bg-accent px-6 py-3.5 text-[15px] font-semibold text-white hover:bg-accent-dark transition-colors shadow-lg shadow-accent/25 text-center">
               Book your free audit
             </a>
-            <a href="#offerings" className="rounded-xl border border-white/15 px-6 py-3.5 text-[15px] font-semibold text-white hover:bg-white/5 transition-colors">
+            <a href="#offerings" className="rounded-xl border border-white/15 px-6 py-3.5 text-[15px] font-semibold text-white hover:bg-white/5 transition-colors text-center">
               See what we do
             </a>
           </motion.div>
@@ -105,7 +105,7 @@ export default function Hero() {
           transition={{ duration: 0.6, delay: 0.7 }}
           className="border-t border-white/8 mt-auto"
         >
-          <div className="py-7 flex flex-wrap justify-center gap-x-12 gap-y-3">
+          <div className="py-6 flex flex-wrap justify-center gap-x-6 gap-y-2.5 sm:gap-x-12 sm:gap-y-3">
             {[
               { label: "Cost to start", value: "$0" },
               { label: "Audit to live", value: "1–2 weeks" },

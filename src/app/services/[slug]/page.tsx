@@ -1,5 +1,4 @@
 import { notFound } from "next/navigation";
-import Link from "next/link";
 import type { Metadata } from "next";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -44,7 +43,7 @@ export default async function ServiceDetailPage({ params }: { params: Promise<{ 
     <div className="min-h-screen bg-bg">
       <Navbar />
       <main>
-        <ServiceDetailClient service={service} index={index} prev={prev} next={next} />
+        <ServiceDetailClient service={service} prev={prev} next={next} />
       </main>
       <Footer />
     </div>

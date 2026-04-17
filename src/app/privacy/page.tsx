@@ -36,8 +36,9 @@ export default function PrivacyPage() {
                 </h2>
                 <p className="pl-[15px]">
                   When you fill out our contact form, we collect your name, phone number, email address,
-                  business name, and any additional information you choose to provide. We do not collect
-                  information automatically through cookies or tracking scripts beyond basic analytics.
+                  business name, and any additional information you choose to provide. We also record the
+                  IP address of submissions to prevent abuse. We do not use advertising cookies or
+                  third-party tracking scripts.
                 </p>
               </section>
 

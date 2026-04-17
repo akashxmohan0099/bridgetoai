@@ -2,11 +2,10 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
-import {
-  PaperPlaneTilt, ChatTeardropDots, Brain, VideoCamera, PlugsConnected, ChartPieSlice, ArrowRight,
-} from "@phosphor-icons/react";
-import type { Icon as PhosphorIcon } from "@phosphor-icons/react";
+import Image from "next/image";
+import { ArrowRight } from "@phosphor-icons/react";
 import { serviceAreas } from "@/data/services";
+import { serviceVisuals } from "@/data/serviceVisuals";
 
 // Only shorten feature names that are too long for the 2-col grid
 const shortNames: Record<string, string> = {
@@ -26,19 +25,10 @@ const shortNames: Record<string, string> = {
   "Client Follow-Up & Retention": "Follow-Up & Retention",
 };
 
-const cards: { icon: PhosphorIcon; logos: string[] }[] = [
-  { icon: PaperPlaneTilt, logos: ["gmail.svg", "outlook.svg", "google-docs.svg", "grammarly.svg"] },
-  { icon: ChatTeardropDots, logos: ["whatsapp.svg", "calendly.svg", "chatgpt.svg", "intercom.svg"] },
-  { icon: Brain, logos: ["chatgpt.svg", "claude.svg", "gemini.svg", "notion.svg"] },
-  { icon: VideoCamera, logos: ["zoom.svg", "teams.svg", "google-meet.svg", "google-docs.svg"] },
-  { icon: PlugsConnected, logos: ["zapier.svg", "hubspot.svg", "slack.svg", "notion.svg"] },
-  { icon: ChartPieSlice, logos: ["xero.svg", "quickbooks.svg", "google-sheets.svg", "power-bi.svg"] },
-];
-
 export default function ServiceCatalogue() {
   return (
-    <section id="services" className="py-20 bg-surface">
-      <div className="mx-auto max-w-[1200px] px-6 sm:px-10">
+    <section id="services" className="py-16 sm:py-20 bg-surface">
+      <div className="mx-auto max-w-[1200px] px-5 sm:px-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -61,7 +51,7 @@ export default function ServiceCatalogue() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
           {serviceAreas.map((area, i) => {
-            const { icon: Icon, logos } = cards[i];
+            const { icon: Icon, logos } = serviceVisuals[area.slug];
 
             return (
               <motion.div
@@ -76,18 +66,18 @@ export default function ServiceCatalogue() {
                   className="group block rounded-2xl border border-border bg-bg overflow-hidden transition-all duration-300 hover:shadow-xl hover:border-primary/15 hover:-translate-y-1 h-full"
                 >
                   {/* Visual header */}
-                  <div className="relative bg-gradient-to-br from-[#4F46E5] via-[#6366F1] to-[#818CF8] px-7 py-10 overflow-hidden">
+                  <div className="relative bg-gradient-to-br from-[#4F46E5] via-[#6366F1] to-[#818CF8] px-5 sm:px-7 py-8 sm:py-10 overflow-hidden">
                     {/* Glow */}
                     <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-52 h-32 bg-white/[0.06] rounded-full blur-3xl pointer-events-none" />
 
-                    <div className="relative z-10 flex items-center justify-between">
+                    <div className="relative z-10 flex items-center justify-between gap-3">
                       {/* Category icon */}
-                      <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-white/[0.1] border border-white/[0.12] shrink-0 backdrop-blur-sm">
-                        <Icon size={28} weight="fill" className="text-white/70" />
+                      <div className="flex h-12 w-12 sm:h-14 sm:w-14 items-center justify-center rounded-2xl bg-white/[0.1] border border-white/[0.12] shrink-0 backdrop-blur-sm">
+                        <Icon size={26} weight="fill" className="text-white/70" />
                       </div>
 
                       {/* Brand logos */}
-                      <div className="flex items-center gap-3">
+                      <div className="flex items-center gap-2 sm:gap-3">
                         {logos.map((logo, li) => (
                           <motion.div
                             key={logo}
@@ -101,15 +91,14 @@ export default function ServiceCatalogue() {
                               delay: (i % 2) * 0.08 + li * 0.07 + 0.15,
                             }}
                             whileHover={{ y: -5, scale: 1.08 }}
-                            className="flex h-[52px] w-[52px] items-center justify-center rounded-2xl bg-white shadow-lg shadow-black/10 transition-shadow duration-300 group-hover:shadow-xl"
+                            className="flex h-[42px] w-[42px] sm:h-[52px] sm:w-[52px] items-center justify-center rounded-xl sm:rounded-2xl bg-white shadow-lg shadow-black/10 transition-shadow duration-300 group-hover:shadow-xl"
                           >
-                            {/* eslint-disable-next-line @next/next/no-img-element */}
-                            <img
+                            <Image
                               src={`/logos/${logo}`}
                               alt={logo.replace(".svg", "")}
                               width={28}
                               height={28}
-                              className="w-[28px] h-[28px]"
+                              className="w-[22px] h-[22px] sm:w-[28px] sm:h-[28px]"
                               loading="lazy"
                             />
                           </motion.div>
@@ -119,11 +108,11 @@ export default function ServiceCatalogue() {
                   </div>
 
                   {/* Content */}
-                  <div className="p-6 sm:p-7">
-                    <h3 className="text-[19px] font-bold text-text leading-snug">{area.title}</h3>
+                  <div className="p-5 sm:p-7">
+                    <h3 className="text-[18px] sm:text-[19px] font-bold text-text leading-snug">{area.title}</h3>
                     <p className="mt-1 text-[14px] text-text-muted">{area.tagline}</p>
 
-                    <div className="mt-5 pt-5 border-t border-border grid grid-cols-2 gap-x-4 gap-y-2.5">
+                    <div className="mt-5 pt-5 border-t border-border grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-2.5">
                       {area.features.map((f) => (
                         <div key={f.name} className="flex items-center gap-2.5">
                           <div className="h-1.5 w-1.5 rounded-full shrink-0 bg-primary" />
@@ -150,9 +139,9 @@ export default function ServiceCatalogue() {
         >
           <p className="text-[15px] text-text-muted">
             Not sure which you need?{" "}
-            <a href="/#contact" className="font-semibold text-primary hover:text-primary-dark transition-colors">
+            <Link href="/#contact" className="font-semibold text-primary hover:text-primary-dark transition-colors">
               Book a free audit
-            </a>{" "}
+            </Link>{" "}
             and we&apos;ll tell you.
           </p>
         </motion.div>

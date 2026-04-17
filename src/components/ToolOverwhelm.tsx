@@ -27,9 +27,9 @@ const outerLogos = [
 
 export default function ToolOverwhelm() {
   return (
-    <section className="py-20 overflow-hidden">
-      <div className="mx-auto max-w-[1200px] px-6 sm:px-10">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
+    <section className="py-16 sm:py-20 overflow-hidden">
+      <div className="mx-auto max-w-[1200px] px-5 sm:px-10">
+        <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
           {/* Text side */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -96,16 +96,14 @@ export default function ToolOverwhelm() {
                   <div className="hidden sm:block absolute" style={{ transform: `rotate(${i * 60}deg) translateX(130px)`, marginLeft: -20, marginTop: -20 }}>
                     <div className="group/chip" style={{ animation: "counter-rotate-cw 16s linear infinite" }}>
                       <div className="w-[40px] h-[40px] rounded-xl overflow-hidden shadow-md transition-transform duration-500 group-hover/chip:scale-150">
-                        {/* eslint-disable-next-line @next/next/no-img-element */}
-                        <img src={`/logos/${logo.file}`} alt={logo.name} width={40} height={40} loading="lazy" className="w-full h-full" />
+                        <Image src={`/logos/${logo.file}`} alt={logo.name} width={40} height={40} loading="lazy" className="w-full h-full" />
                       </div>
                     </div>
                   </div>
                   <div className="sm:hidden absolute" style={{ transform: `rotate(${i * 60}deg) translateX(90px)`, marginLeft: -16, marginTop: -16 }}>
                     <div className="group/chip" style={{ animation: "counter-rotate-cw 16s linear infinite" }}>
                       <div className="w-[32px] h-[32px] rounded-lg overflow-hidden shadow-md">
-                        {/* eslint-disable-next-line @next/next/no-img-element */}
-                        <img src={`/logos/${logo.file}`} alt={logo.name} width={32} height={32} loading="lazy" className="w-full h-full" />
+                        <Image src={`/logos/${logo.file}`} alt={logo.name} width={32} height={32} loading="lazy" className="w-full h-full" />
                       </div>
                     </div>
                   </div>
@@ -119,8 +117,7 @@ export default function ToolOverwhelm() {
                 <div key={i} className="absolute" style={{ left: "50%", top: "50%", transform: `rotate(${i * 36}deg) translateX(210px)`, marginLeft: -17, marginTop: -17 }}>
                   <div className="group/chip" style={{ animation: "counter-rotate-ccw 22s linear infinite" }}>
                     <div className="w-[34px] h-[34px] rounded-lg overflow-hidden shadow-sm opacity-50 transition-all duration-500 group-hover/chip:scale-150 group-hover/chip:opacity-100">
-                      {/* eslint-disable-next-line @next/next/no-img-element */}
-                      <img src={`/logos/${logo.file}`} alt={logo.name} width={34} height={34} loading="lazy" className="w-full h-full" />
+                      <Image src={`/logos/${logo.file}`} alt={logo.name} width={34} height={34} loading="lazy" className="w-full h-full" />
                     </div>
                   </div>
                 </div>

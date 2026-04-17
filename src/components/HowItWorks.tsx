@@ -12,8 +12,8 @@ const steps = [
 
 export default function HowItWorks() {
   return (
-    <section id="how-it-works" className="py-20 bg-surface">
-      <div className="mx-auto max-w-[1200px] px-6 sm:px-10">
+    <section id="how-it-works" className="py-16 sm:py-20 bg-surface">
+      <div className="mx-auto max-w-[1200px] px-5 sm:px-10">
         <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-50px" }} className="text-center max-w-xl mx-auto mb-14">
           <div className="flex justify-center mb-4">
             <span className="inline-flex items-center gap-3 text-[12px] font-semibold tracking-[0.15em] uppercase text-primary/60">
@@ -30,7 +30,7 @@ export default function HowItWorks() {
           {/* Connecting line — desktop only */}
           <div className="hidden lg:block absolute top-[52px] left-[calc(12.5%+20px)] right-[calc(12.5%+20px)] h-px bg-gradient-to-r from-primary/10 via-primary/20 to-primary/10" />
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-6">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-10 lg:gap-6">
             {steps.map((step, i) => (
               <motion.div
                 key={i}

@@ -3,41 +3,13 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
+import Image from "next/image";
 import {
   Plus, Minus, ArrowLeft, CheckCircle, Clock, ArrowRight,
-  MagnifyingGlass, Wrench, GraduationCap, Sparkle,
-  // Service category icons
-  PaperPlaneTilt, ChatTeardropDots, Brain, VideoCamera, PlugsConnected, ChartPieSlice,
-  // Feature icons
-  EnvelopeOpen, Microphone, FileText, ClipboardText, BookOpen, Megaphone,
-  PhoneIncoming, Moon, ChatCircleDots, DeviceMobileSpeaker, Funnel, CalendarCheck,
-  Compass, Terminal, Users, Waveform, Shield, Target,
-  PhoneCall, Subtitles, MagnifyingGlassPlus,
-  ChatCircle, ArrowsClockwise, Plugs, UsersFour, CalendarBlank,
-  ChartBar, CurrencyDollar, TrendUp, Presentation, ChartLineUp,
+  MagnifyingGlass, Wrench, GraduationCap, Sparkle, Target,
 } from "@phosphor-icons/react";
-import type { Icon as PhosphorIcon } from "@phosphor-icons/react";
 import { serviceAreas, type ServiceArea } from "@/data/services";
-
-/* ── visual data ───────────────────────────────────────────────── */
-
-const serviceVisuals: { icon: PhosphorIcon; logos: string[] }[] = [
-  { icon: PaperPlaneTilt, logos: ["gmail.svg", "outlook.svg", "google-docs.svg", "grammarly.svg"] },
-  { icon: ChatTeardropDots, logos: ["whatsapp.svg", "calendly.svg", "chatgpt.svg", "intercom.svg"] },
-  { icon: Brain, logos: ["chatgpt.svg", "claude.svg", "gemini.svg", "notion.svg"] },
-  { icon: VideoCamera, logos: ["zoom.svg", "teams.svg", "google-meet.svg", "google-docs.svg"] },
-  { icon: PlugsConnected, logos: ["zapier.svg", "hubspot.svg", "slack.svg", "notion.svg"] },
-  { icon: ChartPieSlice, logos: ["xero.svg", "quickbooks.svg", "google-sheets.svg", "power-bi.svg"] },
-];
-
-const featureIcons: PhosphorIcon[][] = [
-  [EnvelopeOpen, Microphone, FileText, ClipboardText, BookOpen, Megaphone],
-  [PhoneIncoming, Moon, ChatCircleDots, DeviceMobileSpeaker, Funnel, CalendarCheck],
-  [Compass, Terminal, Users],
-  [PhoneCall, Waveform, Subtitles, BookOpen, MagnifyingGlassPlus, Shield],
-  [ChatCircle, Target, ArrowsClockwise, Plugs, UsersFour, CalendarBlank],
-  [ChartBar, CurrencyDollar, TrendUp, Presentation, ChartLineUp],
-];
+import { serviceVisuals } from "@/data/serviceVisuals";
 
 const logoFloatPositions: React.CSSProperties[] = [
   { top: 8, right: 20 },
@@ -50,15 +22,14 @@ const logoFloatPositions: React.CSSProperties[] = [
 
 interface Props {
   service: ServiceArea;
-  index: number;
   prev: ServiceArea | null;
   next: ServiceArea | null;
 }
 
-export default function ServiceDetailClient({ service, index, prev, next }: Props) {
+export default function ServiceDetailClient({ service, prev, next }: Props) {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
-  const { icon: CategoryIcon, logos } = serviceVisuals[index];
-  const icons = featureIcons[index];
+  const visual = serviceVisuals[service.slug];
+  const { icon: CategoryIcon, logos, featureIcons: icons } = visual;
 
   return (
     <>
@@ -81,7 +52,7 @@ export default function ServiceDetailClient({ service, index, prev, next }: Prop
           </span>
         </motion.div>
 
-        <div className="relative w-full mx-auto max-w-[1200px] px-6 sm:px-10 pt-28 sm:pt-36 pb-20">
+        <div className="relative w-full mx-auto max-w-[1200px] px-5 sm:px-10 pt-24 sm:pt-36 pb-16 sm:pb-20">
           <motion.div initial={{ opacity: 0, y: -8 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.4 }}>
             <Link href="/#services" className="inline-flex items-center gap-2 text-[13px] font-medium text-text-muted hover:text-primary transition-colors mb-10">
               <ArrowLeft size={14} weight="bold" /> All services
@@ -102,7 +73,7 @@ export default function ServiceDetailClient({ service, index, prev, next }: Prop
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.7, delay: 0.15 }}
-                className="text-[clamp(2.4rem,5.5vw,3.6rem)] font-bold leading-[1.06] tracking-[-0.035em] text-text"
+                className="text-[clamp(2rem,6vw,3.6rem)] font-bold leading-[1.06] tracking-[-0.035em] text-text"
               >
                 {service.title}
               </motion.h1>
@@ -169,8 +140,7 @@ export default function ServiceDetailClient({ service, index, prev, next }: Prop
                   className="absolute flex h-[46px] w-[46px] items-center justify-center rounded-xl bg-white shadow-lg shadow-black/8 border border-gray-100"
                   style={logoFloatPositions[li]}
                 >
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img src={`/logos/${logo}`} alt="" width={22} height={22} className="w-[22px] h-[22px]" />
+                  <Image src={`/logos/${logo}`} alt={logo.replace(".svg", "")} width={22} height={22} className="w-[22px] h-[22px]" />
                 </motion.div>
               ))}
             </motion.div>
@@ -181,7 +151,7 @@ export default function ServiceDetailClient({ service, index, prev, next }: Prop
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.6 }}
-            className="mt-14 pt-8 border-t border-primary/[0.08] flex flex-wrap gap-x-12 gap-y-4"
+            className="mt-12 sm:mt-14 pt-8 border-t border-primary/[0.08] flex flex-wrap gap-x-6 gap-y-3 sm:gap-x-12 sm:gap-y-4"
           >
             {[
               { label: "Features included", value: String(service.features.length) },
@@ -189,7 +159,7 @@ export default function ServiceDetailClient({ service, index, prev, next }: Prop
               { label: "Setup & training", value: "Included" },
             ].map((stat, i) => (
               <div key={i} className="flex items-baseline gap-2.5">
-                <span className="text-[28px] font-bold text-text tracking-tight">{stat.value}</span>
+                <span className="text-[24px] sm:text-[28px] font-bold text-text tracking-tight">{stat.value}</span>
                 <span className="text-[13px] text-text-light">{stat.label}</span>
               </div>
             ))}
@@ -198,8 +168,8 @@ export default function ServiceDetailClient({ service, index, prev, next }: Prop
       </section>
 
       {/* ── Features — Bento Grid ───────────────────────────── */}
-      <section className="py-24 bg-surface">
-        <div className="mx-auto max-w-[1200px] px-6 sm:px-10">
+      <section className="py-16 sm:py-24 bg-surface">
+        <div className="mx-auto max-w-[1200px] px-5 sm:px-10">
           <motion.div
             initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -310,8 +280,8 @@ export default function ServiceDetailClient({ service, index, prev, next }: Prop
       </section>
 
       {/* ── Real-world use cases ────────────────────────────── */}
-      <section className="py-24 bg-bg">
-        <div className="mx-auto max-w-[1200px] px-6 sm:px-10">
+      <section className="py-16 sm:py-24 bg-bg">
+        <div className="mx-auto max-w-[1200px] px-5 sm:px-10">
           <motion.div
             initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -381,8 +351,8 @@ export default function ServiceDetailClient({ service, index, prev, next }: Prop
       </section>
 
       {/* ── How we deliver ──────────────────────────────────── */}
-      <section className="py-20 bg-surface">
-        <div className="mx-auto max-w-[1200px] px-6 sm:px-10">
+      <section className="py-16 sm:py-20 bg-surface">
+        <div className="mx-auto max-w-[1200px] px-5 sm:px-10">
           <div className="relative rounded-2xl bg-[#0F172A] p-6 sm:p-10 lg:p-14 overflow-hidden">
             <div className="absolute top-0 right-0 w-80 h-80 bg-[#4F46E5]/10 rounded-full blur-[100px] pointer-events-none" />
             <div className="absolute bottom-0 left-0 w-60 h-60 bg-[#7C3AED]/8 rounded-full blur-[80px] pointer-events-none" />
@@ -446,8 +416,8 @@ export default function ServiceDetailClient({ service, index, prev, next }: Prop
       </section>
 
       {/* ── FAQ ─────────────────────────────────────────────── */}
-      <section className="py-20 bg-bg">
-        <div className="mx-auto max-w-[720px] px-6 sm:px-10">
+      <section className="py-16 sm:py-20 bg-bg">
+        <div className="mx-auto max-w-[720px] px-5 sm:px-10">
           <motion.div
             initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -509,9 +479,9 @@ export default function ServiceDetailClient({ service, index, prev, next }: Prop
       </section>
 
       {/* ── CTA ─────────────────────────────────────────────── */}
-      <section className="py-20 bg-surface overflow-hidden">
-        <div className="mx-auto max-w-[1200px] px-6 sm:px-10">
-          <div className="relative rounded-3xl bg-gradient-to-br from-[#4F46E5] via-[#5B52F0] to-[#818CF8] px-8 py-16 sm:px-16 sm:py-20 text-center overflow-hidden">
+      <section className="py-16 sm:py-20 bg-surface overflow-hidden">
+        <div className="mx-auto max-w-[1200px] px-5 sm:px-10">
+          <div className="relative rounded-3xl bg-gradient-to-br from-[#4F46E5] via-[#5B52F0] to-[#818CF8] px-6 py-14 sm:px-16 sm:py-20 text-center overflow-hidden">
             {/* Decorative glows */}
             <div className="absolute top-0 right-0 w-64 h-64 bg-white/[0.06] rounded-full blur-[80px] pointer-events-none" />
             <div className="absolute bottom-0 left-0 w-48 h-48 bg-white/[0.04] rounded-full blur-[60px] pointer-events-none" />
@@ -543,8 +513,8 @@ export default function ServiceDetailClient({ service, index, prev, next }: Prop
       </section>
 
       {/* ── Prev / Next ─────────────────────────────────────── */}
-      <section className="pb-20 pt-4 bg-surface">
-        <div className="mx-auto max-w-[1200px] px-6 sm:px-10">
+      <section className="pb-16 sm:pb-20 pt-4 bg-surface">
+        <div className="mx-auto max-w-[1200px] px-5 sm:px-10">
           <div className="grid sm:grid-cols-2 gap-4">
             {prev ? (
               <Link
