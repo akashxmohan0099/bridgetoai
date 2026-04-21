@@ -11,22 +11,22 @@ export default function BottomCTA() {
         whileInView={{ opacity: 1, scale: 1 }}
         viewport={{ once: true }}
         transition={{ duration: 0.6 }}
-        className="rounded-[1.5rem] bg-text p-12 sm:p-16 lg:p-20 overflow-hidden relative"
+        className="rounded-[1.5rem] bg-text p-8 sm:p-12 lg:p-20 overflow-hidden relative"
       >
         <div className="absolute top-0 right-0 w-80 h-80 bg-accent/8 rounded-full blur-[120px] pointer-events-none" />
 
         <div className="relative mx-auto max-w-[1100px] text-center">
-          <h2 className="text-[clamp(2rem,4.5vw,3.2rem)] font-bold leading-[1.1] tracking-[-0.03em] text-white">
+          <h2 className="text-[clamp(1.8rem,4.5vw,3.2rem)] font-bold leading-[1.1] tracking-[-0.03em] text-white">
             Ready to find out where AI
-            <br />
-            fits in your business?
+            <br className="hidden sm:block" />
+            {" "}fits in your business?
           </h2>
-          <p className="mt-5 text-[15px] text-white/40 max-w-md mx-auto leading-relaxed">
-            Book your free audit today. We come to you, analyse your business and show you exactly where AI can help.
+          <p className="mt-5 text-[14px] sm:text-[15px] text-white/40 max-w-md mx-auto leading-relaxed">
+            Book an audit today. We come to you, analyse your business, and show you exactly where AI can help. Free or fixed-fee depending on scope — let&apos;s discuss.
           </p>
           <div className="mt-8">
             <a
-              href="#cta"
+              href="#contact"
               className="group inline-flex items-center gap-2.5 rounded-full bg-accent px-7 py-3.5 text-[12px] font-semibold uppercase tracking-[0.12em] text-text hover:bg-accent/90 transition-colors"
             >
               Get Started
@@ -36,7 +36,7 @@ export default function BottomCTA() {
             </a>
           </div>
           <p className="mt-6 text-[11px] text-white/20 uppercase tracking-[0.15em]">
-            Free &middot; No obligation &middot; Australia-wide
+            No obligation &middot; Scoped to your business &middot; Australia-wide
           </p>
         </div>
       </motion.div>

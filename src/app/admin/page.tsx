@@ -37,28 +37,28 @@ export default async function AdminPage() {
   return (
     <div className="min-h-screen bg-bg">
       <header className="sticky top-0 z-10 border-b border-border bg-surface/85 backdrop-blur-xl">
-        <div className="mx-auto max-w-[1000px] px-5 sm:px-8 h-16 flex items-center justify-between">
-          <div className="flex items-center gap-2.5">
-            <span className="h-6 w-1.5 rounded-full bg-gradient-to-b from-primary to-accent" />
-            <span className="text-[15px] font-bold text-text">Bridge To AI</span>
-            <span className="text-[13px] text-text-light ml-2">/ Admin</span>
+        <div className="mx-auto max-w-[1000px] px-4 sm:px-8 h-14 sm:h-16 flex items-center justify-between gap-3">
+          <div className="flex items-center gap-2.5 min-w-0">
+            <span className="h-6 w-1.5 rounded-full bg-gradient-to-b from-primary to-accent shrink-0" />
+            <span className="text-[15px] font-bold text-text truncate">Bridge To AI</span>
+            <span className="text-[13px] text-text-light ml-1 shrink-0">/ Admin</span>
           </div>
           <form action={logoutAction}>
             <button
               type="submit"
-              className="inline-flex items-center gap-1.5 rounded-xl border border-border bg-bg px-3.5 py-2 text-[13px] font-semibold text-text hover:border-primary/30 hover:bg-primary-light/40 transition-colors"
+              className="inline-flex items-center gap-1.5 rounded-xl border border-border bg-bg px-3 sm:px-3.5 py-2 text-[13px] font-semibold text-text hover:border-primary/30 hover:bg-primary-light/40 transition-colors shrink-0"
             >
-              <SignOut size={14} weight="bold" /> Log out
+              <SignOut size={14} weight="bold" /> <span className="hidden sm:inline">Log out</span><span className="sm:hidden">Exit</span>
             </button>
           </form>
         </div>
       </header>
 
-      <main className="mx-auto max-w-[1000px] px-5 sm:px-8 py-10">
+      <main className="mx-auto max-w-[1000px] px-4 sm:px-8 py-6 sm:py-10">
         <div className="flex items-end justify-between mb-6 flex-wrap gap-3">
           <div>
-            <h1 className="text-[28px] font-bold tracking-[-0.02em] text-text">Contact submissions</h1>
-            <p className="mt-1 text-[14px] text-text-muted">
+            <h1 className="text-[22px] sm:text-[28px] font-bold tracking-[-0.02em] text-text">Contact submissions</h1>
+            <p className="mt-1 text-[13px] sm:text-[14px] text-text-muted">
               {submissions.length} total{unreadCount > 0 && <> &middot; <span className="text-primary font-semibold">{unreadCount} unread</span></>}
             </p>
           </div>

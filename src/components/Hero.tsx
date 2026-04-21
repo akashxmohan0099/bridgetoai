@@ -71,7 +71,7 @@ export default function Hero() {
             transition={{ duration: 0.6, delay: 0.25 }}
             className="mt-6 text-[17px] text-[#c7d2fe]/60 leading-relaxed max-w-lg mx-auto"
           >
-            We find where AI saves you time and money, set it up, and train your team. From audit to live in 1–2 weeks.
+            We find where AI saves you time and money, set it up, and train your team. Rapid deployment — audit to live.
           </motion.p>
 
           <motion.div
@@ -81,7 +81,7 @@ export default function Hero() {
             className="mt-9 flex flex-col sm:flex-row flex-wrap justify-center gap-3"
           >
             <a href="#contact" className="rounded-xl bg-accent px-6 py-3.5 text-[15px] font-semibold text-white hover:bg-accent-dark transition-colors shadow-lg shadow-accent/25 text-center">
-              Book your free audit
+              Book your audit
             </a>
             <a href="#offerings" className="rounded-xl border border-white/15 px-6 py-3.5 text-[15px] font-semibold text-white hover:bg-white/5 transition-colors text-center">
               See what we do
@@ -94,7 +94,7 @@ export default function Hero() {
             transition={{ duration: 0.5, delay: 0.55 }}
             className="mt-4 text-[14px] text-[#a5b4fc]/40"
           >
-            Free audit &middot; No obligation &middot; No jargon
+            No obligation &middot; Scoped to your business &middot; No jargon
           </motion.p>
         </div>
 
@@ -107,8 +107,8 @@ export default function Hero() {
         >
           <div className="py-6 flex flex-wrap justify-center gap-x-6 gap-y-2.5 sm:gap-x-12 sm:gap-y-3">
             {[
-              { label: "Cost to start", value: "$0" },
-              { label: "Audit to live", value: "1–2 weeks" },
+              { label: "Initial audit", value: "No obligation" },
+              { label: "Audit to live", value: "Rapid deployment" },
               { label: "Coverage", value: "Australia-wide" },
             ].map((s, i) => (
               <div key={i} className="flex items-baseline gap-2.5">

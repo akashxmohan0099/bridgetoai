@@ -50,7 +50,7 @@ export default function PrivacyPage() {
                 <div className="pl-[15px]">
                   <p>We use the information you provide to:</p>
                   <ul className="mt-2 space-y-1.5 list-disc list-inside">
-                    <li>Respond to your enquiry and schedule your free audit</li>
+                    <li>Respond to your enquiry and schedule your audit</li>
                     <li>Provide you with a tailored proposal</li>
                     <li>Communicate with you about our services</li>
                   </ul>
@@ -78,8 +78,8 @@ export default function PrivacyPage() {
                 <p className="pl-[15px]">
                   Under the Australian Privacy Act 1988, you have the right to access, correct, or request
                   deletion of your personal information. To make a request, email us at{" "}
-                  <a href="mailto:hello@bridgetoai.com.au" className="text-primary hover:text-primary-dark transition-colors font-medium">
-                    hello@bridgetoai.com.au
+                  <a href="mailto:BridgeToAI@proton.me" className="text-primary hover:text-primary-dark transition-colors font-medium break-all">
+                    BridgeToAI@proton.me
                   </a>.
                 </p>
               </section>
@@ -91,8 +91,8 @@ export default function PrivacyPage() {
                 </h2>
                 <p className="pl-[15px]">
                   If you have any questions about this privacy policy, contact us at{" "}
-                  <a href="mailto:hello@bridgetoai.com.au" className="text-primary hover:text-primary-dark transition-colors font-medium">
-                    hello@bridgetoai.com.au
+                  <a href="mailto:BridgeToAI@proton.me" className="text-primary hover:text-primary-dark transition-colors font-medium break-all">
+                    BridgeToAI@proton.me
                   </a>.
                 </p>
               </section>

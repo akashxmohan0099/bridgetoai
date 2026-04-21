@@ -97,7 +97,7 @@ export default function ServiceDetailClient({ service, prev, next }: Props) {
                   href="/#contact"
                   className="rounded-xl bg-accent px-7 py-4 text-[15px] font-semibold text-white hover:bg-accent-dark transition-colors shadow-lg shadow-accent/25"
                 >
-                  Book your free audit
+                  Book your audit
                 </Link>
                 <div className="flex items-center gap-2.5 text-[14px] text-text-light">
                   <Clock size={16} weight="bold" />
@@ -265,13 +265,13 @@ export default function ServiceDetailClient({ service, prev, next }: Props) {
                 See how these work for your business
               </h3>
               <p className="relative z-10 mt-2 text-[15px] text-[#c7d2fe]/50 leading-relaxed">
-                Book a free audit and we&apos;ll walk through exactly which features apply to you.
+                Book an audit and we&apos;ll walk through exactly which features apply to you.
               </p>
               <Link
                 href="/#contact"
                 className="relative z-10 mt-5 inline-flex items-center gap-2 text-[14px] font-semibold text-accent hover:text-white transition-colors group/cta"
               >
-                Book your free audit
+                Book your audit
                 <ArrowRight size={14} weight="bold" className="group-hover/cta:translate-x-1 transition-transform" />
               </Link>
             </motion.div>
@@ -499,13 +499,13 @@ export default function ServiceDetailClient({ service, prev, next }: Props) {
                 Ready to get started?
               </h2>
               <p className="mt-3 text-[16px] text-white/60 max-w-md mx-auto leading-relaxed">
-                Book a free audit and we&apos;ll show you exactly how {service.title.toLowerCase()} works for your business.
+                Book an audit and we&apos;ll show you exactly how {service.title.toLowerCase()} works for your business.
               </p>
               <Link
                 href="/#contact"
                 className="mt-8 inline-block rounded-xl bg-white px-8 py-4 text-[15px] font-semibold text-[#4F46E5] hover:bg-white/90 shadow-xl shadow-black/10 transition-all hover:shadow-2xl hover:-translate-y-0.5"
               >
-                Book your free audit
+                Book your audit
               </Link>
             </motion.div>
           </div>

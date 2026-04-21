@@ -140,7 +140,7 @@ export default function ServiceCatalogue() {
           <p className="text-[15px] text-text-muted">
             Not sure which you need?{" "}
             <Link href="/#contact" className="font-semibold text-primary hover:text-primary-dark transition-colors">
-              Book a free audit
+              Book an audit
             </Link>{" "}
             and we&apos;ll tell you.
           </p>

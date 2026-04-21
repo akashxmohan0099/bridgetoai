@@ -22,10 +22,10 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://bridgetoai.com.au"),
   title: "Bridge To AI — Making AI Work For Your Business",
   description:
-    "We'll show you exactly where AI fits in your business — saving you time, money and resources. Book your FREE audit today.",
+    "We'll show you exactly where AI fits in your business — saving you time, money and resources. Book a no-obligation audit today.",
   openGraph: {
     title: "Bridge To AI — Making AI Work For Your Business",
-    description: "We find exactly where AI fits in your business, set it up, and train your team. Free audit, no obligation.",
+    description: "We find exactly where AI fits in your business, set it up, and train your team. No-obligation audit, scoped to suit.",
     url: "https://bridgetoai.com.au",
     siteName: "Bridge To AI",
     locale: "en_AU",

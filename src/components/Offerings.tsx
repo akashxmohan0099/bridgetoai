@@ -47,7 +47,7 @@ export default function Offerings() {
             Three ways we help your business
           </h2>
           <p className="mt-3 text-[15px] text-text-muted leading-relaxed">
-            Whether you need a quick start, a full integration, or a ground-up build — we work with trades, healthcare, legal, real estate, retail, and professional services across Australia.
+            Whether you need a quick start, a full integration, or a ground-up enterprise build — we work with owner-operators, mid-market organisations, and established enterprises across trades, healthcare, legal, real estate, retail, financial services, and professional services Australia-wide.
           </p>
         </motion.div>
 

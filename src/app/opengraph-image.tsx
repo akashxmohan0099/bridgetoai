@@ -99,7 +99,7 @@ export default function OpengraphImage() {
             color: "rgba(199,210,254,0.75)",
           }}
         >
-          {["Free audit", "1–2 weeks to live", "Australia-wide"].map((t) => (
+          {["No-obligation audit", "Rapid deployment", "Australia-wide"].map((t) => (
             <div
               key={t}
               style={{

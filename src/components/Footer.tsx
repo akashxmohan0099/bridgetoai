@@ -26,7 +26,7 @@ export default function Footer() {
           <div className="space-y-2 text-[14px] text-text-muted">
             <p>bridgetoai.com.au</p>
             <p>Australia-Wide</p>
-            <a href="mailto:hello@bridgetoai.com.au" className="hover:text-primary transition-colors block">hello@bridgetoai.com.au</a>
+            <a href="mailto:BridgeToAI@proton.me" className="hover:text-primary transition-colors block break-all">BridgeToAI@proton.me</a>
           </div>
         </div>
         <div className="mt-10 pt-6 border-t border-primary/[0.12] flex flex-col sm:flex-row items-center justify-between gap-4 text-[13px] text-text-light">

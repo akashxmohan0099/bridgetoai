@@ -37,24 +37,24 @@ export default function ToolOverwhelm() {
             viewport={{ once: true, margin: "-50px" }}
           >
             <div className="mb-6">
-              <span className="inline-flex items-center gap-3 text-[12px] font-semibold tracking-[0.15em] uppercase text-primary/60">
-                <span className="h-[2px] w-5 bg-accent rounded-full" />
+              <span className="inline-flex items-center gap-3 text-[13px] font-bold tracking-[0.18em] uppercase text-accent">
+                <span className="h-[3px] w-6 bg-accent rounded-full" />
                 The problem
               </span>
             </div>
 
-            <h2 className="text-[clamp(1.8rem,3.5vw,2.6rem)] font-bold leading-[1.12] tracking-[-0.02em] text-text">
-              Hundreds of AI tools.{" "}
+            <h2 className="text-[clamp(1.9rem,3.8vw,2.8rem)] font-bold leading-[1.1] tracking-[-0.02em] text-text">
+              Hundreds of AI tools available —{" "}
               <span className="bg-gradient-to-r from-primary to-primary-dark bg-clip-text text-transparent">
-                Zero clarity
+                but which ones make sense
               </span>{" "}
-              on which ones matter.
+              for your business, and how do you implement them?
             </h2>
 
             <p className="mt-5 text-[16px] text-text-muted leading-relaxed max-w-md">
               ChatGPT, Claude, Gemini, Lovable, Cursor, ElevenLabs — new tools
-              launch every week. Your competitors are adopting them. But which
-              ones actually fit your business? We cut through the noise.
+              launch every week, and your competitors are adopting them. We help
+              you separate signal from noise and put the right ones to work.
             </p>
 
             <a

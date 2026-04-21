@@ -6,12 +6,12 @@ import Link from "next/link";
 import { Plus, Minus } from "@phosphor-icons/react";
 
 const faqs = [
-  { q: "How much does it cost?", a: "The initial audit is completely free. After that, projects typically range from $2,000 to $25,000+ depending on scope \u2014 from a one-day training session to a full custom platform build. You\u2019ll get exact fixed pricing in your proposal before committing to anything." },
+  { q: "How much does it cost?", a: "The initial audit is usually free. For larger or more involved engagements it may be a scoped fixed fee — either way, we agree pricing upfront before any work starts. After the audit, projects typically range from $2,000 to $25,000+ depending on scope \u2014 from a one-day training session through to a full custom platform build. You\u2019ll get exact fixed pricing in your proposal before committing to anything." },
   { q: "Will it disrupt my team?", a: "No. We work alongside your team and implement around your schedule. Most setups are done within 1\u20132 weeks with zero downtime." },
   { q: "Do we need technical knowledge?", a: "Not at all. We handle everything technical and train every staff member until they\u2019re confident. Plain English, always." },
-  { q: "What if AI isn\u2019t right for us?", a: "That\u2019s what the free audit is for. We\u2019ll tell you honestly. If it\u2019s not a fit, you\u2019ll know before spending a cent." },
+  { q: "What if AI isn\u2019t right for us?", a: "That\u2019s what the audit is for. We\u2019ll tell you honestly — if it\u2019s not a fit, you\u2019ll know before committing to anything." },
   { q: "How long until we see results?", a: "Most clients see time savings within the first week after go-live. Measurable cost savings typically follow within 30 days." },
-  { q: "Do you work with small businesses?", a: "That\u2019s exactly who we\u2019re built for. 97% of Australian businesses are small to medium \u2014 AI is no longer just for the big end of town." },
+  { q: "What size businesses do you work with?", a: "That\u2019s a big part of who we\u2019re built for — but far from the only part. We work with owner-operators, mid-market operators, and established enterprises; we scope the engagement to suit. Smaller businesses benefit from the speed and simplicity of off-the-shelf tools, while larger and more complex organisations typically need deeper integration, custom builds, and governance. 97% of Australian businesses are small to medium \u2014 and AI is no longer reserved for the big end of town." },
 ];
 
 export default function FAQ() {

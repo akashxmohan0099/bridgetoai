@@ -31,9 +31,9 @@ export default function ContactForm() {
     "w-full rounded-xl border border-border bg-bg px-4 py-3.5 text-[14px] text-text placeholder:text-text-light outline-none transition-all duration-300 focus-visible:border-primary focus-visible:bg-surface focus-visible:ring-4 focus-visible:ring-primary/10 focus-visible:shadow-sm hover:border-primary/30";
 
   return (
-    <section id="contact" className="py-16 sm:py-20">
-      <div className="mx-auto max-w-[1200px] px-5 sm:px-10">
-        <div className="rounded-2xl bg-[#0F172A] p-6 sm:p-12 lg:p-16 overflow-hidden relative">
+    <section id="contact" className="py-12 sm:py-20">
+      <div className="mx-auto max-w-[1200px] px-4 sm:px-10">
+        <div className="rounded-2xl bg-[#0F172A] p-5 sm:p-12 lg:p-16 overflow-hidden relative">
           {/* Gradient orbs */}
           <div className="absolute top-0 right-0 w-96 h-96 bg-[#4F46E5]/10 rounded-full blur-[120px] pointer-events-none" />
           <div className="absolute bottom-0 left-0 w-64 h-64 bg-[#7C3AED]/8 rounded-full blur-[100px] pointer-events-none" />
@@ -48,7 +48,7 @@ export default function ContactForm() {
                 </span>
               </div>
               <h2 className="text-[clamp(1.8rem,3.5vw,2.6rem)] font-bold leading-[1.15] tracking-[-0.02em] text-white">
-                Book your free audit
+                Book your audit
               </h2>
               <p className="mt-4 text-[15px] text-[#c7d2fe]/50 leading-relaxed max-w-md">
                 We come to you, walk through your business, and show you exactly where AI can help.
@@ -56,7 +56,7 @@ export default function ContactForm() {
 
               <div className="mt-10 space-y-4">
                 {[
-                  { icon: Check, text: "Completely free — no strings attached" },
+                  { icon: Check, text: "Free or fixed-fee — depending on scope" },
                   { icon: Check, text: "On-site or video call" },
                   { icon: Check, text: "Clear proposal within 48 hours" },
                 ].map((item, i) => (
@@ -78,7 +78,7 @@ export default function ContactForm() {
 
               <div className="mt-10 pt-8 border-t border-white/8 grid grid-cols-1 sm:grid-cols-2 gap-4">
                 {[
-                  { icon: EnvelopeSimple, label: "Email", value: "hello@bridgetoai.com.au" },
+                  { icon: EnvelopeSimple, label: "Email", value: "BridgeToAI@proton.me" },
                   { icon: MapPin, label: "Coverage", value: "Australia-wide" },
                   { icon: Clock, label: "Response", value: "Within 24 hours" },
                 ].map((item, i) => (
@@ -115,11 +115,11 @@ export default function ContactForm() {
                   </motion.div>
                   <h3 className="mt-5 text-[20px] font-bold text-text">We&apos;ve got your details!</h3>
                   <p className="mt-2 text-[15px] text-text-muted leading-relaxed">
-                    Our team will be in touch within 24 hours to schedule your free audit.
+                    Our team will be in touch within 24 hours to scope your audit and get you booked in.
                   </p>
                 </motion.div>
               ) : (
-                <form onSubmit={handleSubmit} className="relative rounded-2xl bg-surface p-6 sm:p-8 shadow-xl shadow-black/10 space-y-5">
+                <form onSubmit={handleSubmit} className="relative rounded-2xl bg-surface p-5 sm:p-8 shadow-xl shadow-black/10 space-y-5">
                   {/* Honeypot — real users won't see or fill this */}
                   <div aria-hidden="true" className="absolute h-0 w-0 overflow-hidden [clip:rect(0,0,0,0)]">
                     <label htmlFor="website">Website (leave blank)</label>
@@ -143,7 +143,7 @@ export default function ContactForm() {
 
                   <div>
                     <label htmlFor="name" className="block text-[13px] font-semibold text-text mb-1.5">Name or business name</label>
-                    <input id="name" name="name" type="text" required autoComplete="name" placeholder="John Smith or Smith Plumbing"
+                    <input id="name" name="name" type="text" required autoComplete="name" placeholder="John Smith or Smith & Partners"
                       className={inputClass} />
                   </div>
                   <div>
@@ -179,7 +179,7 @@ export default function ContactForm() {
                           <div className="pt-4 space-y-4">
                             <div>
                               <label htmlFor="business" className="block text-[13px] font-semibold text-text mb-1.5">What does your business do?</label>
-                              <input id="business" name="business" type="text" placeholder="e.g. Plumbing, Real estate, Dental clinic"
+                              <input id="business" name="business" type="text" placeholder="e.g. Professional services firm, Healthcare group, Construction company"
                                 className={inputClass} />
                             </div>
                             <div>
@@ -202,7 +202,7 @@ export default function ContactForm() {
                       <SpinnerGap size={20} className="animate-spin" />
                     ) : (
                       <>
-                        Get my free audit
+                        Book my audit
                         <PaperPlaneTilt size={18} weight="bold" className="transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                       </>
                     )}

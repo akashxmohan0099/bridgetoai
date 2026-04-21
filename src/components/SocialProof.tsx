@@ -4,8 +4,8 @@ import { motion } from "framer-motion";
 import { Clock, ShieldCheck, HandCoins, MapPin } from "@phosphor-icons/react";
 
 const promises = [
-  { icon: HandCoins, value: "$0", label: "Cost to audit" },
-  { icon: Clock, value: "1–2 weeks", label: "Audit to live" },
+  { icon: HandCoins, value: "No obligation", label: "Initial audit" },
+  { icon: Clock, value: "Rapid deployment", label: "Audit to live" },
   { icon: MapPin, value: "Australia-wide", label: "Wherever you are" },
   { icon: ShieldCheck, value: "Your data", label: "Stays yours" },
 ];
