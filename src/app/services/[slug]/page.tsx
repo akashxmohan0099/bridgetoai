@@ -39,8 +39,26 @@ export default async function ServiceDetailPage({ params }: { params: Promise<{ 
   const prev = index > 0 ? serviceAreas[index - 1] : null;
   const next = index < serviceAreas.length - 1 ? serviceAreas[index + 1] : null;
 
+  const serviceSchema = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    name: service.title,
+    description: service.description,
+    url: `https://bridgetoai.com.au/services/${slug}`,
+    provider: {
+      "@type": "Organization",
+      name: "Bridge To AI",
+      url: "https://bridgetoai.com.au",
+    },
+    areaServed: { "@type": "Country", name: "Australia" },
+  };
+
   return (
     <div className="min-h-screen bg-bg">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
+      />
       <Navbar />
       <main>
         <ServiceDetailClient service={service} prev={prev} next={next} />

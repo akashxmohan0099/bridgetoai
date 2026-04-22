@@ -8,18 +8,20 @@ const LENGTH = 6;
 export default function LoginForm() {
   const [state, formAction, pending] = useActionState(loginAction, { error: null });
   const [digits, setDigits] = useState<string[]>(() => Array(LENGTH).fill(""));
+  const [lastError, setLastError] = useState<string | null>(null);
   const inputsRef = useRef<Array<HTMLInputElement | null>>([]);
   const formRef = useRef<HTMLFormElement>(null);
 
   const passcode = digits.join("");
   const complete = passcode.length === LENGTH && /^\d{6}$/.test(passcode);
 
-  // Clear digits after a failed attempt so the user can retry.
+  if (state.error !== lastError) {
+    setLastError(state.error);
+    if (state.error) setDigits(Array(LENGTH).fill(""));
+  }
+
   useEffect(() => {
-    if (state.error) {
-      setDigits(Array(LENGTH).fill(""));
-      inputsRef.current[0]?.focus();
-    }
+    if (state.error) inputsRef.current[0]?.focus();
   }, [state.error]);
 
   function updateDigit(i: number, value: string) {

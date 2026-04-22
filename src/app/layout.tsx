@@ -18,15 +18,28 @@ const jakarta = Plus_Jakarta_Sans({
   subsets: ["latin"],
 });
 
+function getSiteUrl(): URL {
+  if (process.env.VERCEL_ENV === "production" && process.env.VERCEL_PROJECT_PRODUCTION_URL) {
+    return new URL(`https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`);
+  }
+  if (process.env.VERCEL_URL) {
+    return new URL(`https://${process.env.VERCEL_URL}`);
+  }
+  return new URL("https://bridgetoai.com.au");
+}
+
+const siteUrl = getSiteUrl();
+
 export const metadata: Metadata = {
-  metadataBase: new URL("https://bridgetoai.com.au"),
+  metadataBase: siteUrl,
   title: "Bridge To AI — Making AI Work For Your Business",
   description:
     "We'll show you exactly where AI fits in your business — saving you time, money and resources. Book a no-obligation audit today.",
+  alternates: { canonical: "https://bridgetoai.com.au" },
   openGraph: {
     title: "Bridge To AI — Making AI Work For Your Business",
     description: "We find exactly where AI fits in your business, set it up, and train your team. No-obligation audit, scoped to suit.",
-    url: "https://bridgetoai.com.au",
+    url: siteUrl.toString(),
     siteName: "Bridge To AI",
     locale: "en_AU",
     type: "website",

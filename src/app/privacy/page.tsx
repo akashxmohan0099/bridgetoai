@@ -6,6 +6,7 @@ import Footer from "@/components/Footer";
 export const metadata: Metadata = {
   title: "Privacy Policy — Bridge To AI",
   description: "How Bridge To AI collects, uses, and protects your personal information.",
+  alternates: { canonical: "https://bridgetoai.com.au/privacy" },
 };
 
 export default function PrivacyPage() {

@@ -3,6 +3,7 @@
 import { headers } from "next/headers";
 import { createClient } from "@supabase/supabase-js";
 import { Resend } from "resend";
+import { getSupabaseAdmin } from "@/lib/supabaseAdmin";
 
 interface ContactFormData {
   name: string;
@@ -55,21 +56,27 @@ export async function submitContactForm(formData: FormData): Promise<{ success: 
   const ip = await getClientIp();
 
   if (ip) {
-    const since = new Date(Date.now() - WINDOW_MINUTES * 60 * 1000).toISOString();
-    const { count, error: countError } = await supabase
-      .from("contact_submissions")
-      .select("id", { count: "exact", head: true })
-      .eq("ip", ip)
-      .gte("created_at", since);
+    // Rate-limit read runs as service role — anon RLS blocks SELECT on this table
+    // by design (admins only). Insert below stays on the anon client so the
+    // anon-insert RLS policy still gates submissions.
+    try {
+      const since = new Date(Date.now() - WINDOW_MINUTES * 60 * 1000).toISOString();
+      const { count, error: countError } = await getSupabaseAdmin()
+        .from("contact_submissions")
+        .select("id", { count: "exact", head: true })
+        .eq("ip", ip)
+        .gte("created_at", since);
 
-    if (countError) {
-      // Column may not exist yet — log and continue without rate-limiting rather than blocking submissions.
-      console.error("Rate-limit check failed (continuing):", countError);
-    } else if ((count ?? 0) >= MAX_PER_IP_PER_WINDOW) {
-      return {
-        success: false,
-        error: "You've sent a few messages already — give us a moment to get back to you.",
-      };
+      if (countError) {
+        console.error("Rate-limit check failed (continuing):", countError);
+      } else if ((count ?? 0) >= MAX_PER_IP_PER_WINDOW) {
+        return {
+          success: false,
+          error: "You've sent a few messages already — give us a moment to get back to you.",
+        };
+      }
+    } catch (err) {
+      console.error("Rate-limit check threw (continuing):", err);
     }
   }
 
