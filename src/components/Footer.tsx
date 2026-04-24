@@ -13,6 +13,10 @@ export default function Footer() {
           <div>
             <ul className="space-y-2">
               {[
+                { label: "What we offer", href: "/#offerings" },
+                { label: "Service areas", href: "/#services" },
+                { label: "Process", href: "/#how-it-works" },
+                { label: "FAQ", href: "/#faq" },
                 { label: "Contact", href: "/#contact" },
               ].map((l) => (
                 <li key={l.href}><a href={l.href} className="text-[14px] text-text-muted hover:text-primary transition-colors">{l.label}</a></li>
@@ -27,6 +31,7 @@ export default function Footer() {
         </div>
         <div className="mt-10 pt-6 border-t border-primary/[0.12] flex flex-col sm:flex-row items-center justify-between gap-4 text-[13px] text-text-light">
           <span>&copy; 2026 Bridge To AI. All rights reserved.</span>
+          <a href="/privacy" className="hover:text-primary transition-colors">Privacy Policy</a>
         </div>
       </div>
     </footer>

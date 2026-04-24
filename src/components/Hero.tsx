@@ -83,6 +83,9 @@ export default function Hero() {
             <a href="#contact" className="rounded-xl bg-accent px-6 py-3.5 text-[15px] font-semibold text-white hover:bg-accent-dark transition-colors shadow-lg shadow-accent/25 text-center">
               Book your audit
             </a>
+            <a href="#offerings" className="rounded-xl border border-white/15 px-6 py-3.5 text-[15px] font-semibold text-white hover:bg-white/5 transition-colors text-center">
+              See what we do
+            </a>
           </motion.div>
 
           <motion.p
